@@ -3,7 +3,7 @@ import React from 'react';
 import classes from './Burger.module.css';
 import BurgerIngredient from './Burgeringredients/Burgeringredients.js';
 
-// Aqui realizamos un procedimiento en el cual se pasa el objeto (el estado de burger builter) y se convierte en un array
+// Aqui realizamos un procedimiento en el cual se pasa el objeto (el estado de burger builder) y se convierte en un array
 const Burger = (props) => {
     let transformedIngredients = Object.keys(props.ingredients)
     .map(igKey =>{
