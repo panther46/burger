@@ -24,14 +24,17 @@ class BurgerBuilder  extends Component {
         totalPrice:4,
     };
 
+    /*
+   Añadiendo manejadores de eventos para añadir ingredients y actualizar precios
+    */
 addIngredientHandler = (type) =>{
-    const oldCount = this.state.ingredients[type]
-    const updatedCount = oldCount +1;
+    const oldCount = this.state.ingredients[type]  // Cuenta anterior
+    const updatedCount = oldCount +1;  // Cuenta actualizada
     const updatedIngredients = {
         ...this.state.ingredients
     };
-    updatedIngredients[type] = updatedCount;
-    const priceAddition = INGREDIENT_PRICES[type];
+    updatedIngredients[type] = updatedCount; // Cuenta actualizada, inmutable para react
+    const priceAddition = INGREDIENT_PRICES[type];  // añadiendo precios
     const oldPrice = this.state.totalPrice;
     const newPrice = oldPrice + priceAddition;
     this.setState ({totalPrice: newPrice, ingredients: updatedIngredients});
